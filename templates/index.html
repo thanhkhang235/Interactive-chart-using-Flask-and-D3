@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Data Dashboard">
+    <meta name="author" content="Aboze Brain">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Data Dashboard</title>
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="about">
+            <h1>Data Dashboard</h1>
+            <h2 class="project-title">Interactive Data Visualization with Flask and D3</h2>
+            <h2 class="author-titile ">Author: Thanh Khang Nguyen</h2>
+            <p class="about-project">About the Project: This is a short demo for Interactive charts for data visualisation using Flask and D3.</p>
+            <p class="summary-title"><strong>Summary of Project Steps:</strong></p>
+            <ul>
+                <li><strong>Setup:</strong> Install Flask, create basic structure.</li>
+                <li><strong>Data Handling:</strong> Prepare and serve data via Flask routes.</li>
+                <li><strong>D3.js Integration:</strong> Include D3.js for interactive visualizations.</li>
+                <li><strong>Chart Creation:</strong> Use D3.js to create SVG-based interactive charts.</li>
+                <li><strong>Integration:</strong> Connect Flask backend with D3.js frontend.</li>
+                <li><strong>Styling:</strong> Apply CSS for aesthetics and responsiveness.</li>
+            </ul>
+            <p class="about-dataset-title"><strong>About Dataset: Student Performance in Exam</strong></p>
+            <ul>
+                <li>Marks secured by the students in high school who from the United States</li>
+                <li>This data set consists of the marks secured by the students in various subjects.</li>
+                <li>Source: Kaggle</li>
+            </ul>
+            <p class="chart-explanation"><strong>Student Demographics: Gender and Race Distribution</strong></p>
+                We have two charts:
+                <ul>
+                    <li><strong>Pie Chart:</strong> Shows the percentage of male and female students.</li>
+                    <li><strong>Bar Chart:</strong> Shows the distribution of students' race.</li>
+                </ul>
+                When no section of the pie chart is clicked, the bar chart shows the overall race distribution. When a section of the pie chart is clicked, the bar chart updates to show the race distribution for the selected gender.
+            </p>
+        </div>
+
+        <div class="visualization">
+            <div id="pieChart"></div>
+            <div id="barChart"></div>
+        </div>
+    </div>
+
+    <script src="/static/js/pieChart.js"></script>
+    <script src="/static/js/barChart.js"></script>
+    <script src="/static/js/updateBarChart.js"></script>
+    <script>
+        const pieChartDataUrl = "{{ url_for('get_piechart_data') }}";
+        const barChartDataUrl = "{{ url_for('get_barchart_data') }}";
+    </script>
+    <script src="/static/js/index.js"></script>
+</body>
+
+</html>

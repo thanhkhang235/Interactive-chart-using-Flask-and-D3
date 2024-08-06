@@ -1,0 +1,112 @@
+/* Reset default browser settings */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding and margin */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  background: #fdfdfd;
+  font-family: "Roboto", sans-serif; /* Updated font family */
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px; /* Adjust font size as needed */
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+}
+
+.about {
+  width: 50%;
+  padding:3.5%;
+  text-align: left;
+  overflow-y: auto;
+}
+
+
+.about p {
+  margin-bottom: 2px; /* Increase the bottom margin between paragraphs */
+}
+
+.about-project {
+  margin-bottom: 2em; /* Add a larger bottom margin for this specific paragraph */
+}
+
+.summary-title {
+  margin-top: 2em; /* Add a top margin for the summary title */
+}
+
+.about-dataset-title {
+  margin-top: 2em; /* Add a larger top margin for this specific paragraph */
+}
+
+.chart-explanation {
+  margin-top: 2em; /* Add a top margin for the chart explanation */
+  margin-bottom: 2em; /* Add a bottom margin to separate from charts */
+}
+
+.visualization {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the left */
+  justify-content: space-around;
+  padding: 2%;
+  overflow-y: auto;
+  margin-left: 200px; /* Adjust left margin to move charts more to the right */
+}
+
+#pieChart, #barChart {
+  width: 100%;
+  height: 50%;
+}
+
+h1 {
+  text-decoration: none; /* Remove underline */
+  text-align: center; /* Center the text */
+  color: #40348c; /* Change color to blue */
+  margin: 0.5em 0em;
+}
+
+
+h2.project-title {
+  font-size: 23px; /* Reduce font size */
+  text-align: center; /* Center the text */
+  margin: 0em 0em; /* Adjust margins as needed */
+}
+
+h2.author-titile {
+  font-size: 20px; /* Reduce font size */
+  text-align: center; /* Center the text */
+}
+
+p, h2, h6 {
+  margin: 0.7em 0em;
+}
+
+a {
+  text-decoration: none;
+}
+
+#pieChart .title, #barChart .title {
+  font-weight: bold;
+}
+
+.slice {
+  font-size: 8px;
+  font-family: "Roboto Mono", monospace;
+  fill: white;
+  font-weight: bold;
+  cursor: pointer;
+}
